@@ -4,6 +4,10 @@ class TodolistsController < ApplicationController
         @list = List.new
   end
 
+  def index
+    @lists = List.all
+    end
+
   def create
         # ストロングパラメーターを使用
          list = List.new(list_params)
