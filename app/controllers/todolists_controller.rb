@@ -4,15 +4,15 @@ class TodolistsController < ApplicationController
         @list = List.new
   end
 
-  def index
-    @lists = List.all
-    end
+    def index
+      @lists = List.all
+      end
 
     def show
       @list = List.find(params[:id])
       end
 
-  def create
+    def create
         # ストロングパラメーターを使用
          list = List.new(list_params)
         # DBへ保存する
@@ -26,17 +26,16 @@ class TodolistsController < ApplicationController
 
         redirect_to todolist_path(list.id) # 詳細画面へリダイレクト
         end
-　   def edit
+    def edit
         @list = List.find(params[:id])
     end
-def update
-    end
-def update
+    def update
         list = List.find(params[:id])
         list.update(list_params)
         redirect_to todolist_path(list.id)
     end
-    
+
+
     private
 
     def list_params
