@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   patch 'todolists/:id' => 'todolists#update', as: 'update_todolist'
 
+    delete "todolists/:id" => "todolists#delete", as: "delete_todolist"
+
+
 end
